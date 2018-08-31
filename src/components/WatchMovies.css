@@ -1,0 +1,26 @@
+.watch-movie-container{
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    margin-top: 125px;
+    height: 315px;
+    font-family: roboto;
+    margin-left: 180px;
+}
+
+.movie-video{
+    height: 100%;
+    width: 100%;
+    /* margin: auto;
+    border-radius: 5px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15PX; */
+}
+
+.watch-movie-card-col1{
+    margin: auto;
+    width: 292px;
+    height: 185px;
+    padding-top: 28px;
+    margin-left: 325px;
+}

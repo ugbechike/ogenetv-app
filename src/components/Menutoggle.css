@@ -1,0 +1,25 @@
+.MenuToggle-btn {
+    color: #FFFFFF !important;
+    height: 33px;
+    font-size: 13px;
+    min-width: 50px;
+    min-height: 18px;
+    background-image: linear-gradient(to right, #049EE1, #312783 );
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10PX;
+}
+
+
+
+@media screen and (max-width: 380px){
+    .MenuToggle-btn {
+        color: #FFFFFF !important;
+        height: 20px;
+        font-size: 9px !important;
+        min-width: 92px !important;
+        min-height: 34px !important;
+        background-image: linear-gradient(to right, #049EE1, #312783 );
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10PX;
+    }
+}

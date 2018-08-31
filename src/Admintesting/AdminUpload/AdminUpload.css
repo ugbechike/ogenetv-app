@@ -1,0 +1,80 @@
+.upload-form {
+    display: flex;
+    /* border: 1px solid black; */
+    height: 450px;
+    /* border-radius: 5px; */
+    width: 50%;
+}
+
+.upload-form>div{
+    width: 53%;
+    display: inline-flex;
+    outline: 1px solid;
+}
+
+.form-control{
+    display: grid;
+    width: 100%;
+    margin: auto;
+    padding-top: 15px;
+    height: 385px;
+}
+
+.input-value{
+    margin-top: 21px;
+    width: 300px;
+    height: 45px;
+    border-color: #b1e1f5;
+}
+.upload-btn{
+    width: 15%;
+    height: 70%;
+    margin-left: 40px;
+    color: white;
+    background-image: linear-gradient(to right, #049EE1, #312783 );
+    border-radius: 5px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: none
+}
+
+.admin-form {
+    width: 100%;
+    display: inline-flex;
+    margin: auto;
+
+}
+
+.admin-form>div{
+    width: 53%;
+    display: inline-grid;
+}
+/* .text-value{
+    display: inline-block;
+} */
+
+.text-value2{
+    /* display: inline-block; */
+    margin-left: 10px;
+}
+.progress-bar{
+    width: 70%;
+    margin: auto;
+}
+
+.description-text{
+    height: 85px;
+    width: 300px !important;
+    text-align: center;
+    border-color: #b1e1f5;
+}
+
+.file-input{
+    border: 1px solid;
+    width: 30%;
+    margin: auto
+}
+.video-upload{
+    height: 124px;
+    width: 20%;
+}

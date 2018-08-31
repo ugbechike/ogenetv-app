@@ -1,0 +1,65 @@
+.MuiTabs-flexContainer-112 {
+    display: inline-block !important;
+}
+
+.MuiGrid-spacing-xs-16-162 {
+    width: calc(100% + 16px);
+    margin: 15px !important;
+}
+
+.MuiGrid-spacing-xs-16-167 {
+    width: calc(100% + 16px);
+    margin: 16px !important;
+}
+
+
+.example1 {
+    height: 30px;	
+    overflow: hidden;
+    position: relative;
+    color: black;
+    padding-top: 72px;
+    border-bottom: 1px solid #2db1ef;
+    width: 80%;
+    margin: auto;
+    font-size: 6px;
+   }
+   .example1 h3 {
+    font-size: 3em;
+    color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);	
+    transform:translateX(100%);
+    /* Apply animation to this element */	
+    -moz-animation: example1 15s linear infinite;
+    -webkit-animation: example1 15s linear infinite;
+    animation: example1 15s linear infinite;
+   }
+   /* Move it (define the animation) */
+   @-moz-keyframes example1 {
+    0%   { -moz-transform: translateX(100%); }
+    100% { -moz-transform: translateX(-100%); }
+   }
+   @-webkit-keyframes example1 {
+    0%   { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(-100%); }
+   }
+   @keyframes example1 {
+    0%   { 
+    -moz-transform: translateX(100%); /* Firefox bug fix */
+    -webkit-transform: translateX(100%); /* Firefox bug fix */
+    transform: translateX(100%); 		
+    }
+    100% { 
+    -moz-transform: translateX(-100%); /* Firefox bug fix */
+    -webkit-transform: translateX(-100%); /* Firefox bug fix */
+    transform: translateX(-100%); 
+    }
+   }

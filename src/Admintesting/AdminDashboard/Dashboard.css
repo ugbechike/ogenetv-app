@@ -1,0 +1,32 @@
+.content{
+    flex-grow: 1 !important;
+    /* backgroundColor: theme.palette.background.default, */
+    padding: "theme.spacing.unit * 3" !important;
+    background-image: url('../ImageAssets/login.jpg');
+    background-size: 100%
+  }
+
+.list-value{
+    display: grid;
+}
+
+.MuiTabs-flexContainer-126{
+    display: grid !important;
+}
+
+.MuiAppBar-colorPrimary-14 {
+    color: #fff;
+    background-color: white !important;
+}
+.MuiTabs-flexContainer-153 {
+    display: grid !important;
+}
+
+.MuiTypography-colorInherit-89 {
+    color: inherit;
+    width: 90%;
+}
+
+.MuiTabs-flexContainer-155 {
+    display: inline-grid !important;
+}
