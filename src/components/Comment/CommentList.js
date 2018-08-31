@@ -1,5 +1,6 @@
 import React, { Component} from "react"
 import './Comment.css';
+import axios from 'axios'
 
 class CommentList extends Component{
     constructor(props){
@@ -23,9 +24,11 @@ class CommentList extends Component{
         let listItem =commentEntries.map(this.createList);
 
         return(
-            <ul className='theList'>
-                {listItem}
-            </ul>
+            <div className=''>
+                <ul className='theList'>
+                    {listItem}
+                </ul>
+            </div>
         );
     }
 

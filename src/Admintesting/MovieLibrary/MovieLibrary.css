@@ -7,7 +7,7 @@
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 60%;
+    width: 45%;
 }
 
 #customers td, #customers th {
@@ -35,3 +35,8 @@
      /* border-color: #5858f3; */
     border: none;
 }
+
+/* .react-swipeable-view-container {
+    width: 80% !important;
+    flex-shrink: 0 !important;
+} */

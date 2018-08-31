@@ -83,12 +83,13 @@ class Signup extends React.Component {
 
       axios.post("https://ogenetv.herokuapp.com/users/signUp", data)
       .then(res =>{
-        console.log(res.data.message)
+        console.log(res)
         
         if (res.status === 200){
           console.log(res)
-          console.log(res.data.message);
-          sessionStorage.setItem('user', res.data.token);
+          console.log(res.data);
+          alert(res.data.message)
+          sessionStorage.setItem('user', res.data._id);
           this.props.history.push('/')
         }
         // if(res.status == 409){

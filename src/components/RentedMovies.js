@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-// import axios from 'axios';
+import axios from 'axios';
 import './Recent.css';
 import {Link} from 'react-router-dom';
 // import Homepage from './Homepage';
@@ -49,13 +49,13 @@ class RentedMovies extends React.Component {
   };
   
   componentDidMount(){
-    
-    // axios.get(`https://ogenetv.herokuapp.com/movies/`)
-    // .then(res => {
-    //   console.log(res)
-    //   this.setState({ movies: res.data.movies})
-    //   console.log(this.state.movies)
-    // })
+    const activeUser = sessionStorage.getItem('user')
+    axios.get(`https://ogenetv.herokuapp.com/users/watch/${activeUser}`)
+    .then(res => {
+      console.log(res.data)
+      this.setState({ movies: res.data})
+      console.log(this.state.movies)
+    })
     
   }
   
@@ -80,22 +80,23 @@ class RentedMovies extends React.Component {
                 <Grid key={movie} item>
                     <Paper className={classes.paper} >
                     <Link to={{
-                            pathname: `/rent/${movie._id}`,
+                            pathname: `/movies/${movie._id}`,
                             state: { movies: movie.title}
                             }}>
                         <div className="image-api">
                           <img className="recent-image" src={movie.image} alt=''/>
+                          <div class="overlay">Watch now</div>
                         </div>
                       </Link>
                           <div className="items">
-                            <div className="sub-items">
+                            {/* <div className="sub-items">
                               <p>{movie.title.length < 20 ? `${movie.title}`: `${movie.title.substring(0, 25)}...`}</p>
-                            </div>
-                            <div className='star-rating'>
+                            </div> */}
+                            {/* <div className='star-rating'>
                               <i className="fa fa-star"></i><i className="fa fa-star"></i>
                               <i className="fa fa-star"></i><i className="fa fa-star"></i>
                               <i className="fa fa-star"></i>
-                            </div>
+                            </div> */}
                             <div className='rating'>
                               <div className='sub-item2'>
                               <i className="fa fa-heart"></i>

@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import './Recent.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import CommentBox from './Comment/CommentBox'
+// import CommentBox from './Comment/CommentBox'
 import {withRouter} from 'react-router-dom' 
 
 
@@ -25,6 +25,8 @@ const styles = theme => ({
 });
 
 // const Api_key = 'a7d7788c2a57044879237c810d135ba0';
+
+
 
 class RentMovies extends Component {
   state = {
@@ -94,25 +96,24 @@ class RentMovies extends Component {
             }]
         },
         callback: (response) => {
-          const data = {
-            refId: response.reference,
+          const details = {
             user: this.state.userId,
-            price: this.state.price,
-            movie: this.state.movieId
+            movie: this.state.movieId,
+            refNo: response.reference,
           }
-          console.log(data)
-          axios.post('https://ogenetv.herokuapp.com/users/buy', data)
+          console.log(details)
+          axios.post('https://ogenetv.herokuapp.com/users/buy', details)
           .then(res=> {
           console.log(res.data)
+          if(res.data.message == 'Movie Purchase Successful'){
+            alert(res.data.message); 
+            this.props.history.push(`/movies/${id}`)
+
+          }
           })
           console.log(response)
-            alert('success. transaction ref is ' + response.reference);  
-            // this.renderRoute()
-
-            // <Redirect to ={`/movies/${title}`}/>
-                           
-          this.props.history.push(`/movies/${id}`)
-        },
+           
+          },
         onClose: function () {
             alert('window closed');
         }
@@ -157,7 +158,7 @@ class RentMovies extends Component {
                 </div>
                 <div>
                   <div className='like-btn'>
-                    <p>Year of Rlease:  {film.ReleaseYear}</p>
+                    <p>Year of Rlease:  {film.releaseYear}</p>
                   </div>
                   <div className='like-btn'>
                     <p>Rating:  4.5</p>
@@ -176,7 +177,7 @@ class RentMovies extends Component {
                 <br />
               </div>
             </div>
-              <CommentBox />
+              {/* <CommentBox /> */}
           </div>
           <div>
           </div>

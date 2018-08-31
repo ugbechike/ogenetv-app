@@ -1,6 +1,8 @@
 .image-logo{
-    height: 40px;
-    width: 138px;
+    /* height: 40px;
+    width: 138px; */
+    height: 27px;
+    width: 130px;
     -webkit-transition: -webkit-transform .8s ease-in-out;
     transition: transform .8s ease-in-out;
     padding: 15px;
