@@ -40,17 +40,20 @@ class CommentBox extends Component{
     }
     render(){
         return(
-            
+            <div>
+                <CommentList entries={this.state.comments}
+                   delete={this.deleteItem}/>
             <div className='text'>
-            <CommentList entries={this.state.comments}
-            delete={this.deleteItem}/>
-          
+                    
                 <form onSubmit={this.addList}>
-                    <input ref={(a)=>this._inputElement=a}
+                    <textarea name="message" ref={(a)=>this._inputElement=a}
                     placeholder='enter text'/>
+                
                     <button type='sumbit'>Add</button>
                 </form>
+
                
+            </div>
             </div>
             
            

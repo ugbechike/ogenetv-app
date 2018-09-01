@@ -50,7 +50,7 @@ class RentedMovies extends React.Component {
   
   componentDidMount(){
     const activeUser = sessionStorage.getItem('user')
-    axios.get(`https://ogenetv.herokuapp.com/users/watch/${activeUser}`)
+    axios.get(`https://ogenetv.herokuapp.com/users/view/${activeUser}`)
     .then(res => {
       console.log(res.data)
       this.setState({ movies: res.data})

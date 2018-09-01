@@ -8,7 +8,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 // import CommentBox from './Comment/CommentBox'
 import {withRouter} from 'react-router-dom' 
-
+import CommentComp from './Comment/CommentList'
 
 const styles = theme => ({
   // button: {
@@ -177,6 +177,7 @@ class RentMovies extends Component {
                 <br />
               </div>
             </div>
+            <CommentComp movie={this.state.movieId}/>
               {/* <CommentBox /> */}
           </div>
           <div>
