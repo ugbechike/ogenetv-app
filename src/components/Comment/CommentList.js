@@ -4,15 +4,16 @@ import axios from 'axios'
 
 // console.clear();
 
-const Title = ({commentCount}) => {
-    return (
-		<div>
-			<div>
-				<h1><i className='fa fa-comments'></i>&nbsp; Comments &nbsp; ({commentCount})</h1> <br />
-			</div>
-		</div>
-    );
-}
+// const Title = ({commentCount}) => {
+//     return (
+// 		<div>
+// 			<div>
+// 				<h1><i className='fa fa-comments'></i>&nbsp; Comments &nbsp; ({commentCount})</h1> <br />
+// 			</div>
+// 		</div>
+//     );
+// }
+
 
 
 	const CommentForm = ({addComment}) => {
@@ -38,7 +39,8 @@ class Comment extends React.Component{
 
    
     render(){
-        const {comment} = this.props
+		const {comment} = this.props
+		console.log(comment)
 	return (
 		<div className='comment-wrapper'>
 		<div className='comment-body'>
@@ -47,7 +49,7 @@ class Comment extends React.Component{
 			</span>
 	
 			<div className='comment-list'>
-			<span >Name: {comment.text} </span>
+			<span >Name: {comment.data.comment.commentBody} </span>
 			</div>
 			</div>
 			<br />
@@ -66,6 +68,7 @@ const CommentList = ({comments}) => {
 	const commentNode = comments.map((comment) => {
 		return (<Comment comment={comment} key={comment.id}/>)
 	});
+	console.log(comments)
 	return (<div className='commentgroup' style={{marginTop:'30px'}}>{commentNode}</div>);
 }
 
@@ -83,56 +86,57 @@ class CommentComp extends React.Component{
             data: [],
             movieId: ''
 		}
-    this.apiUrl = 'https://57b1924b46b57d1100a3c3f8.mockapi.io/api/todos'
-    // this.postApi = 'https://ogenetv.herokuapp.com/comments/add'
+    // this.apiUrl = 'https://57b1924b46b57d1100a3c3f8.mockapi.io/api/todos'
+    this.postApi = 'https://ogenetv.herokuapp.com/comments/add'
     // const title = this.props.movie
     // this.getApi = `https://ogenetv.herokuapp.com/movies/find/`
 }
     // Lifecycle method
     componentWillUpdate(){
 	  // Make HTTP reques with Axios
-	//   const movieComment = this.props.movie
-	// 	axios.get(`https://ogenetv.herokuapp.com/movies/find/${movieComment}`)
-    //     .then((res) => {
-    //         console.log(res.data.message.comments[0])
-	// 		console.log(this.state.data)
-    //       // Set state with result
-	// 		this.setState({data: res.data.messsage.comments});
-	// 	});
+	  const movieComment = this.props.movie
+		axios.get(`https://ogenetv.herokuapp.com/movies/find/${movieComment}`)
+        .then((res) => {
+            console.log(res.data.message.comments[0])
+			console.log(this.state.data)
+          // Set state with result
+			this.setState({data: res.data.comment[0]});
+		});
 
 	//tester
-	axios.get(this.apiUrl)
-        .then((res) => {
-          console.log(this.state.data)
-			this.setState({data:res.data});
-        });
+	// axios.get(this.apiUrl)
+    //     .then((res) => {
+    //       console.log(this.state.data)
+	// 		this.setState({data:res.data});
+    //     });
        
     }
     // Add comment handler
     addComment(val){
-      // Assemble data
-	// 	const comment = {commentBody: val,
-	// 					movie:this.props.movie,
-	// 					user: sessionStorage.getItem('user'),
+    //   Assemble data
+		const comment = {commentBody: val,
+						movie:this.props.movie,
+						user: sessionStorage.getItem('user'),
                      
-    //                     }
-    //                     console.log(comment)
-    //   // Update data
-	// 	axios.post(this.postApi, comment)
-    //     .then((res) => {
-    //         console.log(res)
-    //         this.state.data.push(res);
-    //         this.setState({data: this.state.data});
-	// 	});
-
-		const comment = {text: val}
-      	axios.post(this.apiUrl, comment)
+                        }
+                        console.log(comment)
+      // Update data
+		axios.post(this.postApi, comment)
         .then((res) => {
-			console.log('i am runing now')
-			console.log(res)
-            this.state.data.push(res.data);
-            this.setState({data: this.state.data});
-        });
+            console.log(res)
+            this.state.data.push(res);
+			this.setState({data: this.state.data});
+			console.log(this.state.data)
+		});
+
+		// const comment = {text: val}
+      	// axios.post(this.apiUrl, comment)
+        // .then((res) => {
+		// 	console.log('i am runing now')
+		// 	console.log(res)
+        //     this.state.data.push(res.data);
+        //     this.setState({data: this.state.data});
+        // });
 		
     }
 
@@ -141,7 +145,7 @@ class CommentComp extends React.Component{
       // Render JSX
 		return (
 			<div style={{padding: 30}}>
-				<Title commentCount={this.state.data.length}/>
+				{/* <Title commentCount={this.state.data.length}/> */}
 				<CommentList comments={this.state.data} />
 				<CommentForm addComment={this.addComment.bind(this)}/>
 			</div>
