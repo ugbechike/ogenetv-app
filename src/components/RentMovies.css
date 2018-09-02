@@ -210,6 +210,70 @@ font-family: roboto;
 } */
 }
 
+
+@media screen and (max-width: 500px){
+    .more-details-container {
+        width: 0% !important;
+        background-color: #d6d6d6;
+        /* height: 250px; */
+        /* margin-top: 107px; */
+        font-family: 'roboto';
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 0px;
+        display: inline;
+        padding-right: 0px !important;
+     }
+    
+    
+     .rent-image {
+        width: 98% !important;
+        height: 100% !important;
+        margin-top: 28px;
+        margin-left: 3px;
+        padding-bottom: 22px;
+    }
+        .movie-title {
+            /* outline: 1px solid black; */
+            margin: auto;
+            color: black;
+            width: 86%;
+            font-family: roboto;
+            font-size: 18px !important;
+        }
+    
+        .rent-details {
+            margin: auto;
+            font-size: 15px;
+            width: 86%;
+        }
+    
+        .rent-movie-container {
+        background-color: #d6d6d6 !important;
+        margin: auto;
+        width: 90%;
+        height: 165px !important;
+        margin-left: 0px;
+        display: inline-flex;
+        margin-top: 11px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 24px;
+       
+    }
+    
+    .container > div {
+        width: 100%;
+        display: inline-block;
+        margin: auto;
+    }
+    
+    /* .details {
+        font-size: 15px;
+        padding-bottom: 5px;
+    } */
+    }
+
 @media screen and (max-width: 500px){
     .RentMovies-button-1 {
         width: 18px;

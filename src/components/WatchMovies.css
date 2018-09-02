@@ -38,6 +38,8 @@
     margin: auto;
 }
 
+
+
 .watch-movie-card-col1 {
     margin: auto;
     width: 270px;
@@ -46,6 +48,29 @@
     margin-left: 25px !important;
 }
 }
+
+@media screen and (max-width: 480px){
+    .watch-movie-container {
+        width: 100%;
+        background-color: white;
+        border-radius: 4px;
+        margin-top: 60px;
+        height: 315px;
+        font-family: roboto;
+        margin-left: 0px !important;
+        margin: auto;
+    }
+    
+    
+    
+    .watch-movie-card-col1 {
+        margin: auto;
+        width: 270px;
+        height: 185px;
+        padding-top: 28px;
+        /* margin-left: 80px ; */
+    }
+    }
 
 @media screen and (max-width: 680px){
     .watch-movie-container {
@@ -64,6 +89,6 @@
         width: 270px;
         height: 185px;
         padding-top: 28px;
-        margin-left: 25px !important;
+        /* margin-left: 25px ; */
     }
     }

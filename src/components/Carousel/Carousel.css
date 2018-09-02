@@ -121,7 +121,7 @@
         list-style: none;
         white-space: nowrap;
         justify-content: center;
-        left: 5px;
+        left: 5px !important;
     }
     
 }
