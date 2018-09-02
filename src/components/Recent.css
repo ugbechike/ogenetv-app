@@ -94,6 +94,11 @@
     padding: 20px;
     text-align: center;
   }
+
+  .MuiGrid-spacing-xs-16-163 {
+    width: calc(100% + 16px);
+    margin: 7px !important;
+}
   
   /* When you mouse over the container, fade in the overlay title */
   /* .image-api:hover .overlay {

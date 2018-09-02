@@ -31,7 +31,7 @@ const styles = theme => ({
     margin: 'auto',
     // marginTop: "73px",
     backgroundColor: 'transparent',
-    paddingTop: '90px',
+    paddingTop: '5px',
   },
 
   navBar:{

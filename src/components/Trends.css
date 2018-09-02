@@ -7,3 +7,12 @@
     font-family: 'roboto';
     font-size: 20px;
 }
+@media screen and (max-width: 680px){
+.MuiGrid-spacing-xs-16-168 {
+    width: calc(100% + 16px);
+    margin: 23px !important;
+}
+.MuiGrid-spacing-xs-40-171 > .MuiGrid-item-146 {
+    padding: 4px;
+}
+}

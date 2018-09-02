@@ -48,18 +48,18 @@ class WatchMovies extends Component{
             <div className='container-card'>
               <div className='watch-movie-container'>
                 <div className='movie-video'>
-                    <iframe controls  className="movie-video"
-                      src={films.video} type="video/mp4">
-                    </iframe>
+                    <video   className="movie-video" controls
+                     source src={films.video} type="video/mp4">
+                    </video>
                 </div>
               </div>
             </div>
           <div className='container-card-col'>
             {this.state.rentMovies.map(val => (
               <div key={val._id} className='watch-movie-card-col1'>
-               <iframe controls autoplay className="movie-video"
+               <video controls autoplay className="movie-video"
                       src={val.video} type="video/mp4">
-                </iframe>
+                </video>
               </div>
             ))}
           </div>

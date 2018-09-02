@@ -84,7 +84,7 @@ font-family: roboto;
     width: 86%;
     /* padding-left: 15px; */
     margin: auto;
-    color: #049ee1;
+    color: black;
 }
 .rent-items{
     width: 100% !important;
@@ -101,7 +101,8 @@ font-family: roboto;
 .rent-btn{
     /* outline: 1px solid black; */
     width: 86%;
-    margin: auto
+    margin: auto;
+    /* background-image: linear-gradient(to right, #049EE1, #312783 ); */
     
 }
 .RentMovies-button-1{
@@ -132,13 +133,81 @@ font-family: roboto;
 
 .rent-view-btn{
     height: 26px;
-    background-color: #5858f3;
+    background-image: linear-gradient(to right, #049EE1, #312783 );
     cursor: pointer;
     color: white;
     border: none;
+    border-radius: 5px;
+    margin-left: 4px;
 }
 .empty-lib{
     color: black !important;
+}
+
+
+
+
+@media screen and (max-width: 380px){
+.more-details-container {
+    width: 0% !important;
+    background-color: #d6d6d6;
+    /* height: 250px; */
+    /* margin-top: 107px; */
+    font-family: 'roboto';
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 0px;
+    display: inline;
+    padding-right: 0px !important;
+ }
+
+
+ .rent-image {
+    width: 98% !important;
+    height: 100% !important;
+    margin-top: 28px;
+    margin-left: 3px;
+    padding-bottom: 22px;
+}
+    .movie-title {
+        /* outline: 1px solid black; */
+        margin: auto;
+        color: black;
+        width: 86%;
+        font-family: roboto;
+        font-size: 18px !important;
+    }
+
+    .rent-details {
+        margin: auto;
+        font-size: 15px;
+        width: 86%;
+    }
+
+    .rent-movie-container {
+    background-color: #d6d6d6 !important;
+    margin: auto;
+    width: 90%;
+    height: 165px !important;
+    margin-left: 0px;
+    display: inline-flex;
+    margin-top: 11px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 24px;
+   
+}
+
+.container > div {
+    width: 100%;
+    display: inline-block;
+    margin: auto;
+}
+
+/* .details {
+    font-size: 15px;
+    padding-bottom: 5px;
+} */
 }
 
 @media screen and (max-width: 500px){
@@ -152,6 +221,7 @@ font-family: roboto;
         border-top-left-radius: 10px;
         border-bottom-right-radius: 10PX;
     }
+
 
     .container {
         width: 100%;    

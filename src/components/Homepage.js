@@ -14,9 +14,9 @@ const Homepage = () =>{
     return(
       <div className='home'>
         <Navigation/>
-        <div class="example1">
-          <h3>Movie News and Updates... </h3>
-       </div>
+        
+        <AppCarousel />
+
         <UserTab/>
 
         {/* <Trends /> */}

@@ -33,7 +33,7 @@ const styles = theme => ({
     cursor: 'pointer',
     backgroundColor: '#0e0d0d',
     zIndex: 10,
-    marginRight: '50px',
+    marginRight: '-8px',
     marginBottom: 145,
   },
   control: {
@@ -102,7 +102,7 @@ class RentedMovies extends React.Component {
                               <i className="fa fa-heart"></i>
                               </div>
                               <div className="sub-item1">
-                               <button className='view-btn'>More Details</button>
+                              <i className='fa fa-eye'> 1M</i>
                               </div>
                             </div>
                           </div>

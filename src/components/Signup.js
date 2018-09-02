@@ -13,19 +13,19 @@ import logo from './assets/logo.png';
 // import Validator from "validator";
 
 const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    boxShadow: '2px 0px 8px 3px #b7c3d3',
-    width: '60%',
-    margin: 'auto',
-    cursor: 'pointer',
-    borderRadius: '5px',
-    backgroundColor: 'white',
-  },
+  // container: {
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   flexDirection: 'row',
+  //   boxShadow: '2px 0px 8px 3px #b7c3d3',
+  //   width: '60%',
+  //   margin: 'auto',
+  //   cursor: 'pointer',
+  //   borderRadius: '5px',
+  //   backgroundColor: 'white',
+  // },
     
 
   button: {
@@ -111,7 +111,7 @@ class Signup extends React.Component {
         <div>
           <div><Link to ='/'><img src={logo} alt='logo' className='image-logo'/></Link></div>
           <div className='form-container'>
-        <form className={classes.container} row={true} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+        <form className='signup-container' row={true} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
         <div className='facebook-signup'><p>Sign up with <i className='fa fa-facebook' id='icon'></i></p></div>
         <div className='signup-details'>
           <TextField

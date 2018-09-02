@@ -33,7 +33,7 @@ const styles = theme => ({
     cursor: 'pointer',
     backgroundColor: '#0e0d0d',
     zIndex: 10,
-    marginRight: '50px',
+    marginRight: '25px',
     marginBottom: 145,
   },
   control: {

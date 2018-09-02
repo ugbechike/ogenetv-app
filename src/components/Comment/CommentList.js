@@ -100,7 +100,7 @@ class CommentComp extends React.Component{
             console.log(res.data.message.comments[0])
 			console.log(this.state.data)
           // Set state with result
-			this.setState({data: res.data.comment[0]});
+			this.setState({data: res.data.comments[0]});
 		});
 
 	//tester
