@@ -2,7 +2,7 @@ import React, { Component} from "react"
 import './Comment.css';
 import axios from 'axios'
 
-console.clear();
+// console.clear();
 
 const Title = ({commentCount}) => {
     return (
@@ -23,11 +23,11 @@ const Title = ({commentCount}) => {
 			addComment(input.value);
 			input.value = '';
 		}}>
-			<textarea className="form-control col-md-6" placeholder='Enter Comments here' ref={node => {
+			<textarea className="comment-box col-md-6" placeholder='Enter Comments here' ref={node => {
 				input = node;
 			}} />
             <br />
-            <button type='submit'>Comment</button>
+            <button className='text-button' type='submit'>Comment</button>
 		</form>
     );
 };
@@ -40,15 +40,20 @@ class Comment extends React.Component{
     render(){
         const {comment} = this.props
 	return (
-		<div className='commentBody'>
-			<span className='commentAvatar'>
-				<i className='fa fa-user'></i>
+		<div className='comment-wrapper'>
+		<div className='comment-body'>
+			<span>
+				<i className='fa fa-user  commentAvatar'></i>
 			</span>
-			<span className='commentName smoke'> {comment.userId} </span>
-			<hr />
-			<span className='commentComment smoke'> {comment.text} </span>
-			<hr />
+	
+			<div className='comment-list'>
+			<span >Name: {comment.text} </span>
+			</div>
+			</div>
+			<br />
+			{/* <div className='comment-like'> */}
 			<span className='commentStars'><i className='fa fa-thumbs-up'></i><span id='star'></span></span>
+			{/* </div> */}
 			
 		</div>
     );
@@ -57,6 +62,7 @@ class Comment extends React.Component{
 
 // Map through the comments
 const CommentList = ({comments}) => {
+	// const {comments} = this.props.comments
 	const commentNode = comments.map((comment) => {
 		return (<Comment comment={comment} key={comment.id}/>)
 	});
@@ -77,18 +83,27 @@ class CommentComp extends React.Component{
             data: [],
             movieId: ''
 		}
-    // this.apiUrl = 'https://57b1924b46b57d1100a3c3f8.mockapi.io/api/todos'
-    this.postApi = 'https://ogenetv.herokuapp.com//comments/add'
-    const title = this.props.movie
-    this.getApi = `https://ogenetv.herokuapp.com/movies/find/${title}`
+    this.apiUrl = 'https://57b1924b46b57d1100a3c3f8.mockapi.io/api/todos'
+    // this.postApi = 'https://ogenetv.herokuapp.com/comments/add'
+    // const title = this.props.movie
+    // this.getApi = `https://ogenetv.herokuapp.com/movies/find/`
 }
     // Lifecycle method
     componentWillUpdate(){
-      // Make HTTP reques with Axios
-		axios.get(this.getApi)
+	  // Make HTTP reques with Axios
+	//   const movieComment = this.props.movie
+	// 	axios.get(`https://ogenetv.herokuapp.com/movies/find/${movieComment}`)
+    //     .then((res) => {
+    //         console.log(res.data.message.comments[0])
+	// 		console.log(this.state.data)
+    //       // Set state with result
+	// 		this.setState({data: res.data.messsage.comments});
+	// 	});
+
+	//tester
+	axios.get(this.apiUrl)
         .then((res) => {
-            console.log(res)
-          // Set state with result
+          console.log(this.state.data)
 			this.setState({data:res.data});
         });
        
@@ -96,18 +111,29 @@ class CommentComp extends React.Component{
     // Add comment handler
     addComment(val){
       // Assemble data
-        const comment = {text: val,
-                    userId: sessionStorage.getItem('user'),
-                    movieId: this.props.movie
-                        }
-                        console.log(comment)
-      // Update data
-		axios.post(this.postApi, comment)
+	// 	const comment = {commentBody: val,
+	// 					movie:this.props.movie,
+	// 					user: sessionStorage.getItem('user'),
+                     
+    //                     }
+    //                     console.log(comment)
+    //   // Update data
+	// 	axios.post(this.postApi, comment)
+    //     .then((res) => {
+    //         console.log(res)
+    //         this.state.data.push(res);
+    //         this.setState({data: this.state.data});
+	// 	});
+
+		const comment = {text: val}
+      	axios.post(this.apiUrl, comment)
         .then((res) => {
-            console.log(res)
+			console.log('i am runing now')
+			console.log(res)
             this.state.data.push(res.data);
             this.setState({data: this.state.data});
         });
+		
     }
 
 

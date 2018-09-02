@@ -184,7 +184,7 @@ class RentMovies extends Component {
           </div>
           <div className='container-card-col'>
             {this.state.rentMovies.map(val => (
-              <div key={val} className='rent-movie-container'>
+              <div key={val._id} className='rent-movie-container'>
                 {/* <img src={val.image} alt="film" style={{width: '100%', borderRadius: '4px', height: '423px'}}/> */}
                 <div className="image-api">
                   <img className="recent-image" src={val.image} alt='' />

@@ -48,7 +48,7 @@ class WatchMovies extends Component{
             <div className='container-card'>
               <div className='watch-movie-container'>
                 <div className='movie-video'>
-                    <iframe controls autoplay className="movie-video"
+                    <iframe controls  className="movie-video"
                       src={films.video} type="video/mp4">
                     </iframe>
                 </div>

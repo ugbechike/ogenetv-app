@@ -16,11 +16,15 @@ margin-right: 15px;
     width: 10%;
     max-height: 320px;
     /* overflow-y: auto; */
-    background-color: #0f273d;
-    border: 1px solid #0c2033;
+    /* background-color: #0f273d; */
+    background-image: linear-gradient(to right, #049EE1, #312783 );
+    border: 1px solid #049EE1 #0c2033;
+    /* border: 1px solid #0c2033; */
     border-radius: 4px;
     box-shadow: 0px 0px 40px 0px#1f364d;
     margin-top: 10px;
+    color: white;
+    font-family: roboto;
   }
 
   .Search-result {

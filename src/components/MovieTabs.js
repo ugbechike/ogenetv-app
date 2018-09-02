@@ -32,7 +32,7 @@ const styles = theme => ({
     // marginTop: "75px",
     backgroundColor: 'transparent',
     // paddingTop: '90px',
-    paddingTop: '30px',
+    paddingTop: '0px',
   },
   background: {
     backgroundColor: '#e4ebf1'

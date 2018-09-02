@@ -4,6 +4,7 @@ import UserTab from './UserTab';
 import './Homepage.css';
 import '../App';
 import MovieTab from './MovieTabs';
+import AppCarousel from './Carousel/Carousel'
 // import Trends from './Trends'
 
 
@@ -26,9 +27,10 @@ const Homepage = () =>{
   return(
     <div className='home'>
       <Navigation/>
-        <div class="example1">
+      <AppCarousel />
+        {/* <div class="example1">
           <h3>Movie News and Updates... </h3>
-       </div>
+       </div> */}
       <MovieTab/>
 
       

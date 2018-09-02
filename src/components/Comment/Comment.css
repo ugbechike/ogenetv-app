@@ -2,33 +2,60 @@
     width: 50%;
     margin: auto;
   }
+
+  .comment-wrapper{
+    margin-bottom: 15px;
+
+  }
   
-  .text input{
-    height: 30px;
-    width: 70%;
-    margin: 10px;
+  .comment-box{
+    /* height: 30px; */
+    width: 55%;
+   border-radius: 12px;
     
   }
-  .text button{
+  .text-button{
     height: 30px;
-    background-color: rgb(85, 85, 235);
-    margin-left: 10px;
-    width: 50px;
+    background-image: linear-gradient(to right, #049EE1, #312783 );
+    /* margin-left: 10px; */
+    width: 75px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
   .text button:hover{
     background-color: rgb(62, 62, 242);
     border: 2px solid rgb(62, 62, 242);
     cursor: pointer;
   }
-  .theList li{
-    color: #333;
-    background-color: rgba(255, 255, 255, .5);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    width: 70%;
-    list-style: none;
+  .commentAvatar{
+      color: #0698dd;
+      width: 35px;
+      font-size: 30px !important;
+      height: 35px;
+      /* border: 1px solid; */
+      text-align: center;
+      border-radius: 21px;
   }
+
+  .comment-body{
+    display: inline-flex;
+  }
+  
+  .comment-list{
+    height: 44px;
+    width: 351px;
+    border-radius: 10px;
+    background-color: #d6d6d6;
+    padding-top: 8px;
+    font-family: roboto;
+  }
+
+  .commentStars{
+    margin-left: 45px;
+  }
+
   .theList li:hover{
     background-color: rgb(182, 17, 17);
     color: rgb(235, 231, 225);

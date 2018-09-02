@@ -1,0 +1,92 @@
+.carousel .slider-wrapper {
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    transition: height .15s ease-in;
+    margin-top: 60px;
+    /* height: 587px; */
+    height: 550px;
+}
+
+.carousel .carousel-status {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    padding: 5px;
+    font-size: 10px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.9);
+    color: #fff;
+}
+
+.carousel .slide img {
+    width: 100%;
+    vertical-align: top;
+    border: 0;
+    height: 550px;
+}
+
+.carousel .thumbs {
+    position: relative;
+    list-style: none;
+    white-space: nowrap;
+    /* justify-content: center; */
+    left: 447px;
+}
+
+.carousel .slide .legend {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -45%;
+    width: 90%;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #049EE1, #312783 );
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+   cursor: pointer;
+}
+
+.carousel.carousel-slider {
+    position: relative;
+    /* margin: 0; */
+    overflow: hidden;
+    width: 99% !important;
+    margin: auto !important;
+}
+
+.carousel .thumbs-wrapper {
+    margin: 0px !important;
+    overflow: hidden;
+}
+
+
+
+@media screen and (max-width: 380px){
+    .carousel .slider-wrapper {
+        overflow: hidden;
+        margin: auto;
+        width: 100%;
+        -webkit-transition: height .15s ease-in;
+        -o-transition: height .15s ease-in;
+        transition: height .15s ease-in;
+        margin-top: 60px;
+        /* height: 587px; */
+        height: 202px;
+    }
+
+    .carousel .slide img {
+        width: 100%;
+        vertical-align: top;
+        border: 0;
+        height: 202px;
+    }
+
+    .carousel .thumbs-wrapper {
+        margin: 0px !important;
+        overflow: hidden;
+        display: none;
+    }
+    
+}
