@@ -53,6 +53,13 @@
     border-radius: '5px';
     background-color: 'white';
   }
+  .signup-loading{
+    width: '10%';
+    position: 'absolute';
+    margin-top: '7%';
+    margin-left: '45%';
+    align-items: "center";
+  }
 
 
   @media screen and (max-width: 380px){
@@ -68,6 +75,27 @@
     flex-direction: row;
     justify-content: center;
     background-color: white;
+}
+.signup-loading{
+    position: absolute;
+    top: 166px;
+    right: 107px;
+  }
+
+.Signup-container-71 {
+
+    width: 94% !important;
+    margin: auto;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 2px 0px 8px 3px #b7c3d3;
+    align-items: center;
+    border-radius: 5px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+
 }
 
 .textField {

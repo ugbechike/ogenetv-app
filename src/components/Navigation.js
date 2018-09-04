@@ -9,7 +9,9 @@ import Search from './Search';
 import MenuToggle from './Menutoggle';
 import logo from './assets/logo.png';
 import './Navigation.css';
-import UserToggle from './UserAccount'
+import UserToggle from './UserAccount';
+import NavIcon from './NavIcons/NavIcon'
+import LibraryIcon from './NavIcons/LibraryIcon'
 // import Validator from "validator";
 // import {connect} from 'react-redux'
 
@@ -52,6 +54,8 @@ const Navigation = (props, isAuthenticated) =>{
           <Link to ='/'><img src={logo} alt='logo' className='image-logo'/></Link>
           </Typography>
           <Search/>
+          <LibraryIcon/>
+          <NavIcon/>
          {/* <Link to="/"><button className='logout' onClick={ () => Logout()}>LOGOUT</button></Link> */}
          <UserToggle/>
           </Toolbar>
@@ -66,6 +70,7 @@ const Navigation = (props, isAuthenticated) =>{
             <Link to ='/'><img src={logo} alt='logo' className='image-logo'/></Link>
             </Typography>
             <Search/>
+            <NavIcon/>
             <MenuToggle/>
            </Toolbar>
         </AppBar>

@@ -10,6 +10,16 @@ import RecentMovies from './Recent';
 import CategoryMoviesTab from './Categorytab';
 import './MovieTaps.css';
 import Trends from './Trends';
+import RecentFilms from './RecentFilms/RecentFilms'
+import PhoneIcon from '@material-ui/icons/Phone';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import PersonPinIcon from '@material-ui/icons/PersonPin';
+import HelpIcon from '@material-ui/icons/Help';
+import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
+import axios from 'axios'
+import spinner from './assets/spinner.gif';
+import ThumbDown from '@material-ui/icons/ThumbDown';
+import ThumbUp from '@material-ui/icons/ThumbUp';
 
 function TabContainer({ children, dir }) {
   return (
@@ -38,10 +48,11 @@ const styles = theme => ({
     backgroundColor: '#e4ebf1'
   },
 
-  navBar:{
+  navBar: {
     // backgroundColor: '#002f43',
     backgroundColor: 'transparent',
     boxShadow: 'none',
+    color: 'white'
   },
 
   typo: {
@@ -52,7 +63,32 @@ const styles = theme => ({
 class MovieTab extends React.Component {
   state = {
     value: 0,
+    category: [],
+    categoryMovies: [],
+    loading: false
   };
+
+  componentWillMount() {
+    axios.get(`https://ogenetv.herokuapp.com/categories/`)
+      .then(res => {
+        console.log(res)
+        this.setState({ category: res.data.categories })
+      })
+  }
+
+  getCategoryNames = (name) => {
+    this.setState({loading: true})
+    axios.get(`https://ogenetv.herokuapp.com/movies/get?category=${name}`)
+      .then(res => {
+        console.log(res)
+        this.setState({
+          categoryMovies: res.data.message
+        })
+        this.setState({loading: false})
+      })
+  }
+
+
 
   handleChange = (event, value) => {
     this.setState({ value });
@@ -64,6 +100,7 @@ class MovieTab extends React.Component {
 
   render() {
     const { classes, theme } = this.props;
+    const {loading} = this.state
 
     return (
       <div className={classes.root}>
@@ -71,26 +108,85 @@ class MovieTab extends React.Component {
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
+            scrollable
+            scrollButtons="on"
             indicatorColor="primary"
             // textColor="primary"
-            className={classes.typo}
-            fullWidth
+            // color="white"
           >
-            <Tab label="Recent" />
-            <Tab label="Category" />
-            <Tab label="Trends" />
+            <Tab label="Movies" />
+
+            {this.state.category.map(tabs => (
+              <Tab label={tabs.name} key={tabs.id} onClick={() => this.getCategoryNames(tabs.name)} />
+            ))}
+            {/* <Tab label="Item One" icon={<PhoneIcon />} />
+            <Tab label="Item Two" icon={<FavoriteIcon />} />
+            <Tab label="Item Three" icon={<PersonPinIcon />} />
+            <Tab label="Item Four" icon={<HelpIcon />} />
+            <Tab label="Item Five" icon={<ShoppingBasket />} /> */}
           </Tabs>
         </AppBar>
-        <SwipeableViews
+        {/* <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
-          className={classes.background}
-        >
-          <TabContainer dir={theme.direction}><RecentMovies/></TabContainer>
-          <TabContainer dir={theme.direction}><CategoryMoviesTab/></TabContainer>
-          <TabContainer dir={theme.direction}><Trends/></TabContainer>
-        </SwipeableViews>
+          // className={classes.background}
+        > */}
+        <div className=''>
+        {loading && <div className='movietab-loading'><img alt="spinner" src={spinner}/></div>}
+          {this.state.value === 0 &&
+            <div><RecentFilms /></div>
+          }
+
+          {this.state.value === 1 &&
+            <div className='category-container'>
+              {
+                this.state.categoryMovies.map(filmTab => (
+                  <div className='category-image-container'>
+                    <img src={filmTab.image} alt='' className='category-image' />
+                    <div className="overlay">{filmTab.title}</div>
+                  </div>
+                ))
+                }
+            </div>
+          }
+          {this.state.value === 2 && <div className='category-container'>
+            {this.state.categoryMovies.map(filmTab => (
+              <div className='category-image-container'>
+                <img src={filmTab.image} alt='' className='category-image' />
+                <div className="overlay">{filmTab.title}</div>
+              </div>
+            ))}
+          </div>}
+          {this.state.value === 3 && <div className='category-container'>
+            {this.state.categoryMovies.map(filmTab => (
+              <div className='category-image-container'>
+                <img src={filmTab.image} alt='' className='category-image' />
+                <div className="overlay">{filmTab.title}</div>
+              </div>
+            ))}
+          </div>}
+          {this.state.value === 4 && <div className='category-container'>
+            {this.state.categoryMovies.map(filmTab => (
+              <div className='category-image-container'>
+                <img src={filmTab.image} alt='' className='category-image' />
+                <div className="overlay">{filmTab.title}</div>
+              </div>
+            ))}
+          </div>}
+          {this.state.value === 5 && <div className='category-container'>
+            {this.state.categoryMovies.map(filmTab => (
+              <div className='category-image-container'>
+                <img src={filmTab.image} alt='' className='category-image' />
+                <div className="overlay">{filmTab.title}</div>
+              </div>
+            ))}
+          </div>}
+
+        </div>
+        {/* <TabContainer dir={theme.direction}><RecentMovies/></TabContainer>
+          <TabContainer dir={theme.direction}><Trends/></TabContainer> */}
+        {/* </SwipeableViews> */}
       </div>
     );
   }

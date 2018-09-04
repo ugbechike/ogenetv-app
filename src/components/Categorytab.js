@@ -13,6 +13,7 @@ import DramaMovies from './SubCategories/Drama';
 import EpicMovies from './SubCategories/Epic';
 import HorrorMovies from './SubCategories/Horror';
 import RomanaceMovies from './SubCategories/Romance'
+import axios from 'axios'
 
 
 function TabContainer({ children, dir }) {
@@ -49,7 +50,16 @@ const styles = theme => ({
 class CategoryMoviesTab extends React.Component {
   state = {
     value: 0,
+    category: []
   };
+
+  componentWillUpdate(){
+    axios.get(`https://ogenetv.herokuapp.com/movies/categories/`)
+    .then(res => {
+      console.log(res.data)
+      this.setState({category: res.data})
+    })
+  }
 
   handleChange = (event, value) => {
     this.setState({ value });
@@ -73,13 +83,11 @@ class CategoryMoviesTab extends React.Component {
             className={classes.typo}
             fullWidth
           >
-            <Tab label="Action" />
-            <Tab label="Comedy" />
-            <Tab label="Crime" />
-            <Tab label="Drama" />
-            <Tab label="Epic" />
-            <Tab label="Horror" />
-            <Tab label="Romance" />
+          {this.state.category.map(tabs => (
+
+
+            <Tab label={tabs.name} />
+          ))}
           </Tabs>
         </AppBar>
         <SwipeableViews

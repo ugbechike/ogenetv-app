@@ -49,7 +49,7 @@ class Comment extends React.Component{
 			</span>
 	
 			<div className='comment-list'>
-			<span >Name: {comment.data.comment.commentBody} </span>
+			<span >Name: {comment} </span>
 			</div>
 			</div>
 			<br />
@@ -66,7 +66,7 @@ class Comment extends React.Component{
 const CommentList = ({comments}) => {
 	// const {comments} = this.props.comments
 	const commentNode = comments.map((comment) => {
-		return (<Comment comment={comment} key={comment.id}/>)
+		return (<Comment comment={comment.commentBody} key={comment.id}/>)
 	});
 	console.log(comments)
 	return (<div className='commentgroup' style={{marginTop:'30px'}}>{commentNode}</div>);
@@ -97,10 +97,10 @@ class CommentComp extends React.Component{
 	  const movieComment = this.props.movie
 		axios.get(`https://ogenetv.herokuapp.com/movies/find/${movieComment}`)
         .then((res) => {
-            console.log(res.data.message.comments[0])
+            console.log(res.data.message.comments[0].commentBody)
 			console.log(this.state.data)
           // Set state with result
-			this.setState({data: res.data.comments[0]});
+			this.setState({data: res.data.message.comments});
 		});
 
 	//tester

@@ -3,15 +3,16 @@
     margin: auto;
   }
 
-  .comment-wrapper{
+  .comment-wrapper {
     margin-bottom: 15px;
-
-  }
+    margin-left: 110px;
+}
   
   .comment-box{
     /* height: 30px; */
     width: 55%;
    border-radius: 12px;
+   margin-left: 110px;
     
   }
   .text-button{
@@ -23,6 +24,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 110px;
   }
   .text button:hover{
     background-color: rgb(62, 62, 242);

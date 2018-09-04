@@ -144,8 +144,8 @@ class RentMovies extends Component {
         <div className='container'>
           <div className='container-card'>
             <div className='more-details-container'>
-              <div className='rent-image'>
-                <img src={film.image} alt="film" className='rent-image'  />
+              <div className='rent-image-container'>
+                <img src={film.image} alt="film" className='images'  />
               </div>
               <div className='details-container-box'>
                 <div className='movie-title'>
@@ -158,10 +158,10 @@ class RentMovies extends Component {
                 </div>
                 <div>
                   <div className='like-btn'>
-                    <p>Year of Rlease:  {film.releaseYear}</p>
+                    <p>Year of Release:  {film.releaseYear}</p>
                   </div>
                   <div className='like-btn'>
-                    <p>Rating:  4.5</p>
+                    <p>Price: &#8358;{film.price}</p>
                   </div>
                   <div className='rent-btn'>
                     {/* <Link to={{
@@ -193,12 +193,12 @@ class RentMovies extends Component {
                   <div className="sub-items">
                     <p>{val.title.length < 20 ? `${val.title}` : `${val.title.substring(0, 25)}...`}</p>
                   </div>
-                  <div className='star-rating'>
-                   <p>Rating: 4.2</p>
+                  <div className='movie-rating'>
+                   <p>Genre: {val.category}</p>
                   </div>
                   <div className='rent-movie-rating'>
-                    <div className='sub-item2'>
-                      <p>price: {film.price}</p>
+                    <div className='price'>
+                      <p>Price: &#8358;{val.price}</p>
                     </div>
                     <div className="sub-item1">
                       <Link to={{

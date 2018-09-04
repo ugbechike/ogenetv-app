@@ -6,6 +6,7 @@
     height: 315px;
     font-family: roboto;
     margin-left: 180px;
+    cursor: pointer;
 }
 
 .movie-video{
@@ -36,6 +37,7 @@
     font-family: roboto;
     margin-left: 0px !important;
     margin: auto;
+    cursor: pointer;
 }
 
 
@@ -59,6 +61,7 @@
         font-family: roboto;
         margin-left: 0px !important;
         margin: auto;
+        cursor: pointer;
     }
     
     

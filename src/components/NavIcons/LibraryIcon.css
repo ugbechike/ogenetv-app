@@ -1,0 +1,10 @@
+.lib-icon{
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.lib-icon-image{
+    width: 100%;
+}

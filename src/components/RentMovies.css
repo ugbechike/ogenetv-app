@@ -1,8 +1,9 @@
 .wrapper{
-background-image: url('../components/assets/login.jpg');
+/* background-image: url('../components/assets/login.jpg'); */
 /* background-repeat: no-repeat; */
-background-size: 100%;
+/* background-size: 100%;*/
 font-family: roboto;
+background-color: #0E0E0E;
 }
 .container{
     width: 100%;
@@ -28,7 +29,7 @@ font-family: roboto;
 }
 
 .rent-movie-container{
-    background-color: #d6d6d6 !important;
+    background-color: transparent;
     margin: auto;
     /* width: 90%;
     height: 10% !important; */
@@ -39,6 +40,7 @@ font-family: roboto;
     margin-top: 11px;
     border-radius: 5px;
     cursor: pointer;
+    color: white
 }
 
 .more-details-container {
@@ -46,8 +48,8 @@ font-family: roboto;
     background-color: #d6d6d6;
     height: 15%; */
     width: 755px;
-    background-color: #d6d6d6;
-    height: 362px;
+    background-color: #fff;
+    height: 380px;
     margin-top: 107px;
     border-bottom-right-radius: 10PX;
     font-family: 'roboto';
@@ -97,6 +99,8 @@ font-family: roboto;
     width: 86%;
     font-family: roboto;
     font-size: 24px;
+    font-size: 24px;
+    text-transform: capitalize;
 }
 .rent-btn{
     /* outline: 1px solid black; */
@@ -108,9 +112,22 @@ font-family: roboto;
 .RentMovies-button-1{
     margin-left: 0px !important;
 }
-.rent-image{
+/* .rent-image{
     width: 100% !important; 
     height: 100% !important
+} */
+
+.rent-image-container {
+    width: 250px !important;
+    height: 350px !important;
+    box-shadow: 5px 3px 8px #9a9595;
+    margin-top: 20px;
+    margin-left: 25px
+}
+
+.images {
+width: 100%;
+height: 100% !important;
 }
 .rating-color{
     color: #FF0404;
@@ -144,13 +161,33 @@ font-family: roboto;
     color: black !important;
 }
 
+.image-api {
+    width: 250px !important;
+    height: 100% !important;
+    position: relative;
+    margin-right: 26px;
+}
 
+.sub-items {
+    width: 100%;
+    text-transform: capitalize;
+    
+}
+
+.sub-item2 {
+    /* width: none !important;
+    padding-top: 0px !important; */
+    /* padding-right: 10px; */
+    color: white;
+    padding-left: 2px !important;
+}
 
 
 @media screen and (max-width: 380px){
 .more-details-container {
     width: 0% !important;
-    background-color: #d6d6d6;
+    /* background-color: #d6d6d6; */
+    background-color: #fff;
     /* height: 250px; */
     /* margin-top: 107px; */
     font-family: 'roboto';
@@ -162,12 +199,17 @@ font-family: roboto;
  }
 
 
- .rent-image {
-    width: 98% !important;
-    height: 100% !important;
-    margin-top: 28px;
-    margin-left: 3px;
-    padding-bottom: 22px;
+ .rent-image-container{
+    width: 250px !important;
+    height: 350px !important;
+    margin-top: 65px;
+    margin-left: 35px;
+    padding-bottom: 0px;
+}
+
+.images{
+    width: 100%;
+    height: 100%
 }
     .movie-title {
         /* outline: 1px solid black; */
@@ -188,7 +230,7 @@ font-family: roboto;
     background-color: #d6d6d6 !important;
     margin: auto;
     width: 90%;
-    height: 165px !important;
+    height: 100% !important;
     margin-left: 0px;
     display: inline-flex;
     margin-top: 11px;
@@ -225,6 +267,14 @@ font-family: roboto;
         padding-right: 0px !important;
      }
     
+     .details-container-box {
+
+       
+        display: block;
+        width: 70%;
+        margin-left: 20px;
+    
+    }
     
      .rent-image {
         width: 98% !important;

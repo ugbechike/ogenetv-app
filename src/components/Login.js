@@ -13,24 +13,24 @@ import spinner from './assets/spinner.gif';
 import logo from './assets/logo.png';
 
 const styles = theme => ({
-  // container: {
-  //   display: 'flex',
-  //   flexWrap: 'wrap',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   backgroundColor: 'white',
-  //   height: '365px',
-  //   width: 374,
-  //   marginTop: "30px",
-  //   margin: 'auto',
-  //   boxShadow: '2px 0px 8px 3px #b7c3d3',
-  //   // boxShadow: '2px 2px 5px 2px #616060',
-  //   border: '1px solid #b7c3d3',
-  //   borderRadius: '5px',
-  //   paddingTop: '30px',
-  //   fontFamily: 'roboto',
-  //   fontSize: '20px',
-  // },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    height: '365px',
+    width: 374,
+    marginTop: "30px",
+    margin: 'auto',
+    boxShadow: '2px 0px 8px 3px #b7c3d3',
+    // boxShadow: '2px 2px 5px 2px #616060',
+    border: '1px solid #b7c3d3',
+    borderRadius: '5px',
+    paddingTop: '30px',
+    fontFamily: 'roboto',
+    fontSize: '20px',
+  },
   button: {
     margin: theme.spacing.unit,
     marginLeft: '123px',
@@ -76,10 +76,9 @@ class Login extends React.Component {
     submit = user =>{
       axios.post("https://ogenetv.herokuapp.com/users/login", user, {headers: { }})
       .then(res =>{
-        console.log(res)
+        
         if(res.data.message === 'email or password invalid'|| res.data.message === 'email does not exist'){
-          console.log(res.data.message);
-          this.setState({
+            this.setState({
             errors: res.data.message,
             showing: true
           })
@@ -127,19 +126,13 @@ class Login extends React.Component {
         // let output = { errors ? <div>{errors}</div> : ('')}
   
         return (
-          <div>
+          <div >
             <div><Link to ='/'><img src={logo} alt='logo' className='image-logo'/></Link></div>
             <div className='form-container'>
-              {loading && <div style={{
-                      width: '10%',
-                      position: 'absolute',
-                      marginTop: '7%',
-                      marginLeft: '45%',
-                      alignItems: "center"
-                }}><img alt="spinner" src={spinner}/></div>}
+              {loading && <div className='loader' ><img alt="spinner" src={spinner} /></div>}
 
 
-              <form className='login-container' row={true} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+              <form className={classes.container} row={true} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
                 
                 <div>
                   { this.state.showing && <div>{errors}</div>}

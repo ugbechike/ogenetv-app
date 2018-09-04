@@ -9,23 +9,23 @@ import './Login.css';
 import './Signup.css';
 import {Link} from 'react-router-dom';
 import logo from './assets/logo.png';
-// import Typography from '@material-ui/core/Typography';
-// import Validator from "validator";
+import spinner from './assets/spinner.gif';
+
 
 const styles = theme => ({
-  // container: {
-  //   display: 'flex',
-  //   flexWrap: 'wrap',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   flexDirection: 'row',
-  //   boxShadow: '2px 0px 8px 3px #b7c3d3',
-  //   width: '60%',
-  //   margin: 'auto',
-  //   cursor: 'pointer',
-  //   borderRadius: '5px',
-  //   backgroundColor: 'white',
-  // },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    boxShadow: '2px 0px 8px 3px #b7c3d3',
+    width: '60%',
+    margin: 'auto',
+    cursor: 'pointer',
+    borderRadius: '5px',
+    backgroundColor: 'white',
+  },
     
 
   button: {
@@ -73,25 +73,26 @@ class Signup extends React.Component {
 
     handleSubmit = (e) => {
       e.preventDefault();
-
-        let data = {...this.state}
-        console.log(data)
+      let data = {...this.state}
+      this.setState({loading: true})
+      console.log(data)
 
         if(this.state.password !== this.state.confirmPassword){
           alert("password don't match")
         }
-
+          
       axios.post("https://ogenetv.herokuapp.com/users/signUp", data)
       .then(res =>{
         console.log(res)
         
         if (res.status === 200){
-          console.log(res)
-          console.log(res.data);
           alert(res.data.message)
           sessionStorage.setItem('user', res.data._id);
           this.props.history.push('/')
         }
+        this.setState({
+          loading: true
+        })
         // if(res.status == 409){
         //   console.log(res)
         // }
@@ -106,12 +107,16 @@ class Signup extends React.Component {
 
     render() {
       const { classes } = this.props;
+      const {loading} = this.state
   
       return (
         <div>
           <div><Link to ='/'><img src={logo} alt='logo' className='image-logo'/></Link></div>
           <div className='form-container'>
-        <form className='signup-container' row={true} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+
+             {loading && <div className='signup-loading'><img alt="spinner" src={spinner}/></div>}
+
+        <form className={classes.container} className='signup-container' row={true} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
         <div className='facebook-signup'><p>Sign up with <i className='fa fa-facebook' id='icon'></i></p></div>
         <div className='signup-details'>
           <TextField
@@ -121,6 +126,7 @@ class Signup extends React.Component {
             value={this.state.username}
             onChange={this.handleChange}
             margin="auto"
+            
           />
            <TextField
           id="email"
