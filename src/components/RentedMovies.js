@@ -2,6 +2,8 @@ import React from 'react';
 import './RecentFilms/RecentFilms.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Navigation from './Navigation';
+import './RentedMovies.css';
 
 
 
@@ -28,10 +30,14 @@ class RentedMovies extends React.Component{
 render(){
     
     return(
-        <div className='recent-films-container'>
+        <div className='lib-wrapper'>
+         <Navigation/>
+        <div className='lib-text'><p>Library</p></div>
+        <div className='lib-films-container'>
+
         
             {this.state.movies.map(movie => (
-                <div className='recent-film-cards'>
+                <div className='rented-film-cards'>
                 <Link to={{
                             pathname: `/movies/${movie._id}`,
                             state: { movies: movie.title}
@@ -41,6 +47,7 @@ render(){
                 </Link>
                 </div>
             ))}
+        </div>
         </div>
      
         

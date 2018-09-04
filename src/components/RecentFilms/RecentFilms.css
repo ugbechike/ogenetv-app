@@ -61,6 +61,20 @@
     align-items: "center";
   }
 
+  @media screen and (max-width: 320px){
+  .recent-film-cards {
+    width: 125px !important;
+    height: 200px;
+    margin-top: 40px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 5px 3px 8px #181717;
+    float: left;
+    left: 10px;
+    margin-right: 182px;
+}
+  }
+
   @media screen and (max-width: 380px){
     
 .rented-loading{

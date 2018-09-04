@@ -25,7 +25,7 @@ const styles = theme =>({
 class WatchMovies extends Component{
   state ={
     rentedMovie: [],
-    rentMovies: [1, 2, 3, 4, 5, 6],
+    orderMovies: [],
   }
 
   componentDidMount() {
@@ -34,8 +34,20 @@ class WatchMovies extends Component{
     .then(res => {
       console.log(res)
       this.setState({ rentedMovie: res.data.message })
+      // this.setState({ orderMovies: res.data.message })
     })
-}
+
+  }
+
+// componentDidUpdate() {
+//   const title = this.props.match.params.id
+//     axios.get(`https://ogenetv.herokuapp.com/movies/find/${title}`)
+//     .then(res => {
+//       console.log(res)
+//       this.setState({ rentedMovie: res.data.message })
+//     })
+
+// }
 
     render(){
      
@@ -44,27 +56,16 @@ class WatchMovies extends Component{
     return(
       <div className='wrapper'>
         <Navigation/>
-        <div className='container'>
-            <div className='container-card'>
-              <div className='watch-movie-container'>
-                <div className='movie-video'>
-                    <video   className="movie-video" controls
+        <div className='watch-movie-container'>
+              <div className='movie-video'>
+                    <video   className="video-box" controls
                      source src={films.video} type="video/mp4">
                     </video>
                 </div>
               </div>
             </div>
-          <div className='container-card-col'>
-            {this.state.rentMovies.map(val => (
-              <div key={val._id} className='watch-movie-card-col1'>
-               <video controls autoplay className="movie-video"
-                      src={val.video} type="video/mp4">
-                </video>
-              </div>
-            ))}
-          </div>
-        </div>  
-      </div>
+         
+     
     )
   }
 

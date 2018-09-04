@@ -39,11 +39,12 @@
     opacity: 1;
 }
 .movietab-loading{
-    width: '10%';
-    position: 'absolute';
-    margin-top: '7%';
-    margin-left: '45%';
-    align-items: "center";
+    width: 10%;
+    position: 'absolute' ;
+    margin-top: 7%;
+    margin-left: 45% ;
+    align-items: "center" ;
+    /* right: 30px; */
   }
 
 
@@ -169,4 +170,4 @@ border-radius: 5px;
         padding: 20px;
         text-align: center;
       }
-    }
+}

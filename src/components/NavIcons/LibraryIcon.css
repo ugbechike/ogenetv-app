@@ -8,3 +8,14 @@
 .lib-icon-image{
     width: 100%;
 }
+
+
+
+@media screen and (max-width: 320px){
+.lib-icon {
+    height: 45px;
+    width: 38px;
+    cursor: pointer;
+    margin-right: -4px;
+}
+}

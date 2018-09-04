@@ -1,0 +1,97 @@
+.lib-wrapper{
+background-color: #0E0E0E;
+height: 693px;
+}
+
+.lib-films-container {
+    display: inline-flex;
+    height: auto;
+    width: 100%;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+.lib-text{
+    color: white;
+    text-transform: capitalize;
+    padding-top: 150px;
+    margin: auto;
+width: 85%;
+}
+.rented-film-cards{
+width: 250px;
+height: 350px;
+margin-top: 40px;
+border-radius: 6px;
+position: relative;
+box-shadow: 5px 3px 8px #181717;
+}
+
+
+/* media query*/
+
+
+@media screen and (max-width: 320px){
+
+    .lib-films-container {
+        display: inline-flex;
+        height: auto;
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: -27px;
+    }
+
+.lib-text {
+    color: white;
+    text-transform: capitalize;
+    font-size: 20px;
+    padding-top: 65px;
+}
+
+.rented-film-cards {
+    width: 135px;
+    height: 210px;
+    margin-top: 40px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 5px 3px 8px #181717;
+    float: left;
+    left: 10px;
+    margin-right: 25px;
+}
+}
+
+
+
+@media screen and (max-width: 375px){
+
+    .lib-films-container {
+        display: inline-flex;
+        height: auto;
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: -27px;
+    }
+
+.lib-text {
+    color: white;
+    text-transform: capitalize;
+    font-size: 20px;
+    padding-top: 65px;
+}
+
+.rented-film-cards {
+    width: 135px;
+    height: 210px;
+    margin-top: 40px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 5px 3px 8px #181717;
+    float: left;
+    left: 10px;
+    margin-right: 25px;
+}
+}

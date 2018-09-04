@@ -111,7 +111,7 @@ class UserTab extends React.Component {
             // textColor="#049ee1"
             // Color="white"
           >
-            <Tab label="Rented Movies"  />
+            {/* <Tab label="Rented Movies"  /> */}
 
             <Tab label="Movies" />
 
@@ -128,17 +128,17 @@ class UserTab extends React.Component {
        
 
         <div className=''>
-        {this.state.value === 0 &&
+        {/* {this.state.value === 0 &&
         <div>
           <RentedMovies/>
           </div>
-        }
+        } */}
 
-          {this.state.value === 1 &&
+          {this.state.value === 0 &&
             <div><RecentFilms /></div>
           }
 
-          {this.state.value === 2 &&
+          {this.state.value === 1 &&
             <div className='category-container'>
               {
                 this.state.categoryMovies.map(filmTab => (
@@ -150,6 +150,14 @@ class UserTab extends React.Component {
                 }
             </div>
           }
+          {this.state.value === 2 && <div className='category-container'>
+            {this.state.categoryMovies.map(filmTab => (
+              <div className='category-image-container'>
+                <img src={filmTab.image} alt='' className='category-image' />
+                <div className="overlay">{filmTab.title}</div>
+              </div>
+            ))}
+          </div>}
           {this.state.value === 3 && <div className='category-container'>
             {this.state.categoryMovies.map(filmTab => (
               <div className='category-image-container'>
@@ -167,14 +175,6 @@ class UserTab extends React.Component {
             ))}
           </div>}
           {this.state.value === 5 && <div className='category-container'>
-            {this.state.categoryMovies.map(filmTab => (
-              <div className='category-image-container'>
-                <img src={filmTab.image} alt='' className='category-image' />
-                <div className="overlay">{filmTab.title}</div>
-              </div>
-            ))}
-          </div>}
-          {this.state.value === 6 && <div className='category-container'>
             {this.state.categoryMovies.map(filmTab => (
               <div className='category-image-container'>
                 <img src={filmTab.image} alt='' className='category-image' />

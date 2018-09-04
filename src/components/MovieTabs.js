@@ -18,6 +18,7 @@ import HelpIcon from '@material-ui/icons/Help';
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import axios from 'axios'
 import spinner from './assets/spinner.gif';
+import {Link} from 'react-router-dom';
 import ThumbDown from '@material-ui/icons/ThumbDown';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 
@@ -143,8 +144,13 @@ class MovieTab extends React.Component {
               {
                 this.state.categoryMovies.map(filmTab => (
                   <div className='category-image-container'>
+                   <Link to={{
+                          pathname: `/rent/${filmTab._id}`,
+                                    state: { categoryMovies: filmTab.title}
+                                    }}>
                     <img src={filmTab.image} alt='' className='category-image' />
                     <div className="overlay">{filmTab.title}</div>
+                  </Link>
                   </div>
                 ))
                 }
@@ -153,32 +159,52 @@ class MovieTab extends React.Component {
           {this.state.value === 2 && <div className='category-container'>
             {this.state.categoryMovies.map(filmTab => (
               <div className='category-image-container'>
+               <Link to={{
+                          pathname: `/rent/${filmTab._id}`,
+                                    state: { categoryMovies: filmTab.title}
+                                    }}>
                 <img src={filmTab.image} alt='' className='category-image' />
                 <div className="overlay">{filmTab.title}</div>
+                </Link>
               </div>
             ))}
           </div>}
           {this.state.value === 3 && <div className='category-container'>
             {this.state.categoryMovies.map(filmTab => (
               <div className='category-image-container'>
+               <Link to={{
+                          pathname: `/rent/${filmTab._id}`,
+                                    state: { categoryMovies: filmTab.title}
+                                    }}>
                 <img src={filmTab.image} alt='' className='category-image' />
                 <div className="overlay">{filmTab.title}</div>
+                </Link>
               </div>
             ))}
           </div>}
           {this.state.value === 4 && <div className='category-container'>
             {this.state.categoryMovies.map(filmTab => (
               <div className='category-image-container'>
+               <Link to={{
+                          pathname: `/rent/${filmTab._id}`,
+                                    state: { categoryMovies: filmTab.title}
+                                    }}>
                 <img src={filmTab.image} alt='' className='category-image' />
                 <div className="overlay">{filmTab.title}</div>
+                </Link>
               </div>
             ))}
           </div>}
           {this.state.value === 5 && <div className='category-container'>
             {this.state.categoryMovies.map(filmTab => (
               <div className='category-image-container'>
+               <Link to={{
+                          pathname: `/rent/${filmTab._id}`,
+                                    state: { categoryMovies: filmTab.title}
+                                    }}>
                 <img src={filmTab.image} alt='' className='category-image' />
                 <div className="overlay">{filmTab.title}</div>
+                </Link>
               </div>
             ))}
           </div>}

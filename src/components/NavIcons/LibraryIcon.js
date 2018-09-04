@@ -6,7 +6,7 @@ import {Link } from 'react-router-dom';
 
 const LibraryIcon = () => {
     return(
-        <Link to='/'>
+        <Link to="/userlib">
         <div className='lib-icon'>
             <img src={Library} alt='' className='lib-icon-image'/>
         </div>

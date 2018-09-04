@@ -60,6 +60,27 @@ margin-right: 15px;
 width: 120px;
 } */
 
+
+@media screen and (max-width: 320px){
+.search-input {
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 23px;
+  width: 160px;
+  background-color: transparent;
+  text-align: center;
+  border: 2px solid #2db1ef;
+  margin-right: 2px;
+  color: black;
+  margin-right: -1px;
+}
+}
+
+
+
+
+
+
 @media screen and (max-width: 380px){
   .Search-result-container {
       position: absolute;

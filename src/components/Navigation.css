@@ -51,6 +51,17 @@
     background-color: '#002f43'
   }
 
+
+
+  @media screen and (max-width: 320px){
+  logo {
+    padding: 0;
+    margin: 0;
+    width: 78px;
+    height: 23px;
+  }
+}
+
   @media screen and (max-width: 500px){
     .image-logo {
       padding: 0;

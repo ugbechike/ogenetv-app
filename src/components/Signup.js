@@ -116,7 +116,7 @@ class Signup extends React.Component {
 
              {loading && <div className='signup-loading'><img alt="spinner" src={spinner}/></div>}
 
-        <form className={classes.container} className='signup-container' row={true} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+        <form className={classes.container}  row={true} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
         <div className='facebook-signup'><p>Sign up with <i className='fa fa-facebook' id='icon'></i></p></div>
         <div className='signup-details'>
           <TextField

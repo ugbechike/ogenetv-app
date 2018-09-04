@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import Login from './components/Login';
 import Signup from './components/Signup';
-import RecentMovies from './components/Recent';
+import RentedMovies from './components/RentedMovies';
 import CategoryMovies from './components/Category';
 import Error from './Error/Error';
 import './App.css';
@@ -39,7 +39,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/" component={Homepage} exact />
-            <Route exact path="/" component={RecentMovies} exact />
+            <UserRoutes exact path="/userlib" component={RentedMovies} exact />
             <Route exact path="/categories" component={CategoryMovies} exact />
             <Route exact path="/trends" component={Trends} exact />
             <Route exact path="/upload" component={AdminTester} exact />

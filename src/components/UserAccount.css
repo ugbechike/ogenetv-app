@@ -4,3 +4,19 @@
     margin-left: -11px !important;
 
 }
+
+
+
+@media screen and (max-width: 320px){
+.UserToggle-btn-73 {
+    color: #FFFFFF;
+    width: 20px;
+    height: 29px;
+    font-size: 23px;
+    min-width: 33px;
+    min-height: 20px;
+    margin-right: 10px;
+    border-radius: 15px;
+    background-image: linear-gradient(to right, #049EE1, #312783 );
+}
+}

@@ -11,8 +11,7 @@
   .comment-box{
     /* height: 30px; */
     width: 55%;
-   border-radius: 12px;
-   margin-left: 110px;
+    margin-left: 110px;
     
   }
   .text-button{
@@ -79,5 +78,30 @@
     padding-top: 8px;
     font-family: roboto;
    
+}
+
+.text-button{
+  height: 30px;
+  background-image: linear-gradient(to right, #049EE1, #312783 );
+  /* margin-left: 10px; */
+  width: 75px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.comment-box{
+  /* height: 30px; */
+  width: 55%;
+ margin-left: 10px;
+  
+}
+.comment-wrapper {
+
+  margin-bottom: 15px;
+  margin-left: 10px;
+
 }
   }
