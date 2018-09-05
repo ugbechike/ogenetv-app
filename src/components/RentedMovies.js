@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Navigation from './Navigation';
 import './RentedMovies.css';
+import spinner from './assets/spinner.gif';
 
 
 
@@ -11,30 +12,36 @@ class RentedMovies extends React.Component{
 
       state = {
            films: [],
-           movies: []
+           movies: [],
+           loading: false
       }
    
       
 
       componentDidMount(){
+          this.setState({loading: true})
             const activeUser = sessionStorage.getItem('user')
             axios.get(`https://ogenetv.herokuapp.com/users/view/${activeUser}`)
             .then(res => {
               console.log(res.data)
-              this.setState({ movies: res.data})
+              this.setState({ movies: res.data,
+                loading: false
+            })
+              
               console.log(this.state.movies)
             })
+
             
           }
 
 render(){
-    
+    const {loading} = this.state.loading
     return(
         <div className='lib-wrapper'>
          <Navigation/>
         <div className='lib-text'><p>Library</p></div>
         <div className='lib-films-container'>
-
+        {loading && <div className='movietab-loading'><img alt="spinner" src={spinner}/></div>}
         
             {this.state.movies.map(movie => (
                 <div className='rented-film-cards'>

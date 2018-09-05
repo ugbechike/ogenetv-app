@@ -75,7 +75,7 @@ class Signup extends React.Component {
       e.preventDefault();
       let data = {...this.state}
       this.setState({loading: true})
-      console.log(data)
+      
 
         if(this.state.password !== this.state.confirmPassword){
           alert("password don't match")
@@ -83,12 +83,12 @@ class Signup extends React.Component {
           
       axios.post("https://ogenetv.herokuapp.com/users/signUp", data)
       .then(res =>{
-        console.log(res)
+        
         
         if (res.status === 200){
-          alert(res.data.message)
-          sessionStorage.setItem('user', res.data._id);
-          this.props.history.push('/')
+          alert(`${res.data.message} please login`)
+          // sessionStorage.setItem('user', res.data._id);
+          this.props.history.push('/login')
         }
         this.setState({
           loading: true

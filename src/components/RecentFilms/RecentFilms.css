@@ -53,12 +53,10 @@
     text-align: center;
   }
 
-  .rented-loading{
-    width: '10%';
-    position: 'absolute';
-    margin-top: '7%';
-    margin-left: '45%';
-    align-items: "center";
+  .rented-loading {
+    width: 10%;
+    position: absolute;
+    bottom: 86px;
   }
 
   @media screen and (max-width: 320px){
@@ -74,6 +72,68 @@
     margin-right: 182px;
 }
   }
+
+  @media screen and (max-width: 330px){
+    .recent-film-cards {
+      width: 125px !important;
+      height: 200px;
+      margin-top: 40px;
+      border-radius: 6px;
+      position: relative;
+      box-shadow: 5px 3px 8px #181717;
+      float: left;
+      left: 10px;
+      margin-right: 182px;
+  }
+    }
+
+
+    @media screen and (max-width: 364px){
+    
+        .rented-loading{
+            position: absolute;
+            top: 166px;
+            right: 107px;
+          }
+          
+          .recent-films-container {
+            height: auto;
+            width: 100%;
+            justify-content: space-around;
+           flex-wrap: wrap;
+        
+        }
+          .recent-film-cards {
+        
+            width: 145px;
+            height: 210px;
+            margin-top: 40px;
+            border-radius: 6px;
+            position: relative;
+            box-shadow: 5px 3px 8px #181717;
+            float: left;
+            left: 10px;
+            margin-right: 20px;
+        
+        }
+        
+        
+        .overlay {
+            position: absolute; 
+            bottom: 0; 
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1; 
+            width: 80%;
+            transition: .5s ease;
+            opacity:0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+          }
+        
+        }
 
   @media screen and (max-width: 380px){
     
@@ -92,7 +152,7 @@
 }
   .recent-film-cards {
 
-    width: 150px;
+    width: 145px;
     height: 210px;
     margin-top: 40px;
     border-radius: 6px;

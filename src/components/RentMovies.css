@@ -182,6 +182,11 @@ height: 100% !important;
     padding-left: 2px !important;
 }
 
+.rentfilm-loading{
+    position: absolute;
+    width: 10%;
+    top: 76px;
+}
 
 @media screen and (max-width: 380px){
 .more-details-container {
@@ -198,6 +203,25 @@ height: 100% !important;
     padding-right: 0px !important;
  }
 
+ .rented-film-cards {
+    width: 150px;
+    height: 250px;
+    margin-top: 30px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 5px 3px 8px #181717;
+    float: left;
+}
+
+.lib-text {
+
+    color: white;
+    text-transform: capitalize;
+    padding-top: 60px;
+    margin: auto;
+    width: 85%;
+
+}
 
  .rent-image-container{
     width: 250px !important;
@@ -262,6 +286,15 @@ height: 100% !important;
 } */
 }
 
+.movietab-loading{
+    width: 10%;
+    position: 'absolute' ;
+    margin-top: 7%;
+    margin-left: 45% ;
+    align-items: "center" ;
+    /* right: 30px; */
+  }
+
 
 @media screen and (max-width: 500px){
     .more-details-container {
@@ -276,6 +309,16 @@ height: 100% !important;
         display: inline;
         padding-right: 0px !important;
      }
+
+     .movietab-loading{
+        width: 10%;
+        position: 'absolute' ;
+        margin-top: 7%;
+        margin-left: 45% ;
+        align-items: "center" ;
+        /* right: 30px; */
+      }
+   
      .like-btn {
       
         width: 86%;

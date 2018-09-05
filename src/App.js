@@ -11,7 +11,7 @@ import Trends from './components/Trends';
 import AdminTester from './Admintesting/AdminUpload/AdminUpload';
 import RentMovies from './components/RentMovies';
 import WatchMovies from './components/WatchMovies';
-import Payment from './components/Payment';
+import OgeneSignup from './components/OgeneSignup'
 // import GuestRoutes from './components/AuthUser/GuestRoutes';
 import UserRoutes from './components/AuthUser/UserRoutes';
 import Dashboard from './Admintesting/AdminDashboard/Dashboard';
@@ -46,7 +46,7 @@ class App extends Component {
             <Route exact path="/admin" component={Dashboard} />
             <Route exact path="/adminlogin" component={AdminLogin} />
             <UserRoutes path="/movies/:id" component={WatchMovies} exact />
-            <Route exact path="/payment" component={Payment} />
+            <Route exact path="/ogenesignup" component={OgeneSignup} />
             <Route exact path="/rent/:id" component={RentMovies} />
             <Route component={Error} />
 

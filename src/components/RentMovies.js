@@ -8,7 +8,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 // import CommentBox from './Comment/CommentBox'
 import {withRouter} from 'react-router-dom' 
-import CommentComp from './Comment/CommentList'
+import CommentComp from './Comment/CommentList';
+import spinner from './assets/spinner.gif';
 
 const styles = theme => ({
   // button: {
@@ -35,10 +36,12 @@ class RentMovies extends Component {
     userId: sessionStorage.getItem('user'),
     userEmail: '',
     price: '',
-    movieId: ''
+    movieId: '',
+    loading: false
   }
   
   componentDidMount() {
+    this.setState({loading: true})
     const title = this.props.match.params.id
     axios.get(`https://ogenetv.herokuapp.com/movies/find/${title}`)
     .then(res => {
@@ -46,6 +49,7 @@ class RentMovies extends Component {
       this.setState({ activeMovie: res.data.message })
       this.setState({price: res.data.message.price})
       this.setState({movieId: res.data.message._id})
+      this.setState({loading: false})
     })
 
     
@@ -138,10 +142,12 @@ class RentMovies extends Component {
     // console.log(this.props)
     // const { classes } = this.props;
     const film = this.state.activeMovie
+    const {loading} = this.state.loading
     return (
       <div className='wrapper'>
         <Navigation />
         <div className='container'>
+        {loading && <div className='rentfilm-loading'><img alt="spinner" src={spinner}/></div>}
           <div className='container-card'>
             <div className='more-details-container'>
               <div className='rent-image-container'>
