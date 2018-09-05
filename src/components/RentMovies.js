@@ -83,8 +83,7 @@ class RentMovies extends Component {
     const userDetail = sessionStorage.getItem('user')
     axios.get(`https://ogenetv.herokuapp.com/admin/getUser/${userDetail}`)
     .then(res => {
-      console.log(res.data.message[0].email)
-      this.setState({
+        this.setState({
         userEmail: res.data.message[0].email
       })
       var handler = PaystackPop.setup({
@@ -105,17 +104,17 @@ class RentMovies extends Component {
             movie: this.state.movieId,
             refNo: response.reference,
           }
-          console.log(details)
+          
           axios.post('https://ogenetv.herokuapp.com/users/buy', details)
           .then(res=> {
-          console.log(res.data)
+          
           if(res.data.message == 'Movie Purchase Successful'){
             alert(res.data.message); 
             this.props.history.push(`/movies/${id}`)
 
           }
           })
-          console.log(response)
+          
            
           },
         onClose: function () {
@@ -159,7 +158,7 @@ class RentMovies extends Component {
                 </div>
                 <div className='rent-details'>
                   <p>
-                    {film.description}
+                     {film.description}
                   </p>
                 </div>
                 <div>

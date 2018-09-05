@@ -77,8 +77,8 @@ class MenuToggle extends React.Component {
                 <Paper>
                   <ClickAwayListener onClickAway={this.handleClose}>
                     <MenuList>
-                      <MenuItem onClick={this.handleClose}><Link to ='/login'><Button color="inherit">Login</Button></Link></MenuItem>
-                      <MenuItem onClick={this.handleClose}><Link to ='/signup'><Button color="inherit">Sign up</Button></Link></MenuItem>
+                      <MenuItem onClick={this.handleClose}><Link to ='/ogenelogin'><Button color="inherit">Login</Button></Link></MenuItem>
+                      <MenuItem onClick={this.handleClose}><Link to ='/ogenesignup'><Button color="inherit">Sign up</Button></Link></MenuItem>
                     </MenuList>
                   </ClickAwayListener>
                 </Paper>

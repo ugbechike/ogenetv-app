@@ -33,7 +33,7 @@
 }
 
 .recent-film-cards:hover .overlay{
-    box-shadow: 2px 1px #9a9595;
+  box-shadow: 5px 3px 8px #181717;
     transition: .2s;
     opacity: 1;
 }
@@ -70,6 +70,13 @@
     float: left;
     left: 10px;
     margin-right: 182px;
+}
+
+.rented-loading{
+  position: absolute;
+  top: 237px;
+  right: 191px;
+
 }
   }
 
@@ -124,7 +131,7 @@
             background: rgb(0, 0, 0);
             background: rgba(0, 0, 0, 0.5); /* Black see-through */
             color: #f1f1f1; 
-            width: 80%;
+            width: 70%;
             transition: .5s ease;
             opacity:0;
             color: white;
@@ -139,9 +146,11 @@
     
 .rented-loading{
     position: absolute;
-    top: 166px;
-    right: 107px;
-  }
+    top: 237px;
+    right: 207px;
+
+}
+  
   
   .recent-films-container {
     height: auto;
@@ -171,7 +180,7 @@
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.5); /* Black see-through */
     color: #f1f1f1; 
-    width: 80%;
+    width: 70%;
     transition: .5s ease;
     opacity:0;
     color: white;

@@ -18,6 +18,7 @@ import axios from 'axios'
 
 	const CommentForm = ({addComment}) => {
 		let input;
+		if (sessionStorage.getItem('user')){
     return (
 		<form onSubmit={(e) => {
             e.preventDefault();
@@ -30,7 +31,10 @@ import axios from 'axios'
             <br />
             <button className='text-button' type='submit'>Comment</button>
 		</form>
-    );
+	);
+}else{
+	return ''
+}
 };
 
 
@@ -92,7 +96,7 @@ class CommentComp extends React.Component{
     // this.getApi = `https://ogenetv.herokuapp.com/movies/find/`
 }
     // Lifecycle method
-    componentWillUpdate(){
+    componentDidUpdate(){
 	  // Make HTTP reques with Axios
 	  const movieComment = this.props.movie
 		axios.get(`https://ogenetv.herokuapp.com/movies/find/${movieComment}`)

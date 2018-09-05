@@ -1,6 +1,81 @@
+/* variables*/
+.value{
+--darktan: #9A8548;
+--grad2: #373737;
+--grad1: darken(--grad2, 2);
+--grad3: lighten(--darktan, 4);
+--grad5: darken(--darktan-color, 4);
+}
+.bookshelf--frame {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.bookshelf--frame {
+	background: #0E0E0E;
+    background-image: url('./assets/wood.png'), linear-gradient var(--grad1,--grad2 290px,--grad3 290px,--grad3 292px,--darktan 292px,--darktan 298px,--grad5 298px,--grad5 300px);	
+	background-size: auto, 10px 300px;
+	border-left: 10px solid #9A8548;
+    border-right: 10px solid #9A8548;
+    border-bottom: 10px solid #9A8548;
+     border-top: 10px solid #9A8548;  
+    text-align: center;
+}  
+       /* :first-of-type {
+            border-top: 10px solid #9A8548;
+        } */
+
+
+	
+	.book-wrapper {
+		display: inline-block;
+		width: 290px;
+		vertical-align: bottom;
+		height: 280px;
+		position: relative;
+		margin: 10px 0;
+        max-width: 100%;
+        
+    }    
+		.img-class{
+      height: auto;
+      width: auto;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+      transform: translateX(-50%);
+			max-height: 100%;
+			max-width: 100%;
+		}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .lib-wrapper{
 background-color: #0E0E0E;
-height: 693px;
+height: 793px;
+padding-top: 100px;
 }
 
 .lib-films-container {

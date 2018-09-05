@@ -78,14 +78,14 @@ class MovieTab extends React.Component {
   }
 
   getCategoryNames = (name) => {
-    this.setState({loading: true})
+    
     axios.get(`https://ogenetv.herokuapp.com/movies/get?category=${name}`)
       .then(res => {
         console.log(res)
         this.setState({
           categoryMovies: res.data.message
         })
-        this.setState({loading: false})
+        
       })
   }
 
@@ -134,7 +134,7 @@ class MovieTab extends React.Component {
           // className={classes.background}
         > */}
         <div className=''>
-        {loading && <div className='movietab-loading'><img alt="spinner" src={spinner}/></div>}
+        {/* {loading && <div className='movietab-loading'><img alt="spinner" src={spinner}/></div>} */}
           {this.state.value === 0 &&
             <div><RecentFilms /></div>
           }
@@ -143,15 +143,17 @@ class MovieTab extends React.Component {
             <div className='category-container'>
               {
                 this.state.categoryMovies.map(filmTab => (
+                  <Link to={{
+                    pathname: `/rent/${filmTab._id}`,
+                              state: { categoryMovies: filmTab.title}
+                              }}>
                   <div className='category-image-container'>
-                   <Link to={{
-                          pathname: `/rent/${filmTab._id}`,
-                                    state: { categoryMovies: filmTab.title}
-                                    }}>
+                  
                     <img src={filmTab.image} alt='' className='category-image' />
                     <div className="overlay">{filmTab.title}</div>
-                  </Link>
+                  
                   </div>
+                  </Link>
                 ))
                 }
             </div>

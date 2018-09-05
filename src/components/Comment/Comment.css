@@ -55,6 +55,7 @@
 
   .commentStars{
     margin-left: 45px;
+    color: white;
   }
 
   .theList li:hover{

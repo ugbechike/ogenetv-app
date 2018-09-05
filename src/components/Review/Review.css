@@ -1,0 +1,72 @@
+@media screen and (min-width: 320px){
+    .modal-btn{
+        float: right;
+        position: relative;
+        bottom: -3px;
+        right: 6px;
+        height: 30px;
+        background-color: #0796db;
+        color: white;
+        border: none;
+        width: 75px;
+        cursor: pointer;
+    }
+    }
+    
+    @media screen and (min-width: 1150px){
+        .feedback-message{
+            width: 100%
+        }
+    
+            .feedback-name{
+                margin-bottom: 10px;
+                width: 100%;
+            }
+    
+            .feedback-email{
+                margin-bottom: 10px;
+                width: 100%;
+            }
+    
+            .ogene-feedback-form{
+                margin-left: 11px;
+            }
+       
+    
+    
+    
+        .modal-btn{
+            float: right;
+            position: relative;
+            right: 6px;
+            height: 38px;
+            background-color: #0796db;
+            color: white;
+            border: none;
+            width: 110px;
+            bottom: 63px;
+            cursor: pointer;
+        }
+    
+        .feedback-ogene-form {
+            padding: 0px;
+            width: 65%;
+            height: auto;
+            margin: auto;
+            margin-top: auto;
+            border: 1px solid white;
+            margin-top: 65px;
+            background-color: white;
+            box-shadow: 2px 0px 8px 3px #b7c3d3;
+        
+        }
+    
+        .feedback-form-name{
+            display: inline-block;
+            padding: 0px 0px 0px 0px;
+            width: 90%;
+            margin-bottom: 0px;
+            margin-top: 49px;
+            margin-left: 12px;
+        }
+    }

@@ -35,30 +35,43 @@ class RentedMovies extends React.Component{
           }
 
 render(){
-    const {loading} = this.state.loading
+    // const {loading} = this.state.loading
+    const { movies } = this.state;
+    if(movies.length > 0){
+
     return(
         <div className='lib-wrapper'>
-         <Navigation/>
-        <div className='lib-text'><p>Library</p></div>
-        <div className='lib-films-container'>
-        {loading && <div className='movietab-loading'><img alt="spinner" src={spinner}/></div>}
-        
-            {this.state.movies.map(movie => (
-                <div className='rented-film-cards'>
-                <Link to={{
-                            pathname: `/movies/${movie._id}`,
-                            state: { movies: movie.title}
+        <Navigation/>
+            <div class="bookshelf--frame">
+                {this.state.movies.map(movie => (    
+                <div class="book-wrapper">
+                 <Link to={{
+                           pathname: `/movies/${movie._id}`,
+                           state: { movies: movie.title}
                             }}>
-                    <img className="recent-film-image" src={movie.image} alt='film' />
-                    <div className="overlay">{movie.title}</div>
+                
+                <img className='img-class' src={movie.image} width="250" height="350" alt="" />
+                <div className="overlay">{movie.title}</div>
                 </Link>
                 </div>
-            ))}
+                ))}
+            </div>
         </div>
-        </div>
-     
+        
         
     );
+}else{
+    return(
+        <div className='lib-wrapper'>
+        <Navigation/>
+            <div class="bookshelf--frame">
+               <p>No movie in your shelf</p>
+            </div>
+        </div>
+        
+        
+    );
+}
 }
 }
 

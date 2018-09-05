@@ -11,13 +11,13 @@ import Trends from './components/Trends';
 import AdminTester from './Admintesting/AdminUpload/AdminUpload';
 import RentMovies from './components/RentMovies';
 import WatchMovies from './components/WatchMovies';
-import OgeneSignup from './components/OgeneSignup'
 // import GuestRoutes from './components/AuthUser/GuestRoutes';
 import UserRoutes from './components/AuthUser/UserRoutes';
 import Dashboard from './Admintesting/AdminDashboard/Dashboard';
 import AdminLogin from './Admintesting/AdminLogin/AdminLogin';
 // import AdminRoutes from './Admintesting/AdminAuth/AdminRoutes'
-
+import OgeneSignup from './components/GetStarted/OgeneSignup'
+import OgeneLogin from './components/GetStarted/OgeneLogin'
 
 class App extends Component {
   state = {
@@ -47,6 +47,7 @@ class App extends Component {
             <Route exact path="/adminlogin" component={AdminLogin} />
             <UserRoutes path="/movies/:id" component={WatchMovies} exact />
             <Route exact path="/ogenesignup" component={OgeneSignup} />
+            <Route exact path="/ogenelogin" component={OgeneLogin} />
             <Route exact path="/rent/:id" component={RentMovies} />
             <Route component={Error} />
 
