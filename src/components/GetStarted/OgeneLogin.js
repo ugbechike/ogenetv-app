@@ -59,14 +59,14 @@ class OgeneLogin extends React.Component {
  
      handleSubmit = (e) =>{
        e.preventDefault();
-       this.setState({ loading: true})
        const errors = this.validate(this.state.user);
+       this.setState({ loading: true})
        this.setState({errors});
        //    this.setState({ loading: false})
        if(Object.keys(errors).length ===0){
            
+           this.setState({ loading: false})
            this.submit(this.state.user)
-         this.setState({ loading: false})
        }
      };
  
@@ -105,6 +105,7 @@ class OgeneLogin extends React.Component {
                                 value={this.state.email}
                                 onChange={this.handleChange}
                                 className='login-username'
+                                required
 
                                 />
                             </div>
@@ -120,6 +121,7 @@ class OgeneLogin extends React.Component {
                                         placeholder="Password"
                                         onChange={this.handleChange}
                                         className='login-email'
+                                        required
 
                                     />
                             </div>
